@@ -16,22 +16,21 @@ int	to_draw_mandelbrot(t_fractol *frac)
 {
 	double temp;
 	int n = 0;
-	double aux = 0;
+	double va_z = 0;
 
-	frac->z_real = frac->c_real;
-	frac->z_imag = frac->c_imag;
-	while(n < frac->max_iterations && aux < 4)
+	frac->z_re = frac->c_re;
+	frac->z_im = frac->c_im;
+	while(n < frac->max_iterations && va_z < 4)
 	{
-		temp = pow(frac->z_real, 2) - pow(frac->z_imag, 2) + frac->c_real;
-		frac->z_imag  = (2 * frac->z_real * frac->z_imag) + frac->c_imag;
-		frac->z_real = temp;
-		aux = pow(frac->z_real, 2) + pow(frac->z_imag, 2);
+		temp = pow(frac->z_re, 2) - pow(frac->z_im, 2) + frac->c_re;
+		frac->z_im  = (2 * frac->z_re * frac->z_im) + frac->c_im;
+		frac->z_re = temp;
+		va_z = pow(frac->z_re, 2) + pow(frac->z_im, 2);
 		n++;
 	}
 	return (n);
 }
 
-#include <stdio.h>
 int mandelbrot(t_fractol *frac)
 {
 	int n;
@@ -42,8 +41,8 @@ int mandelbrot(t_fractol *frac)
 	{
 		while(frac->y < FRAC_WH)
 		{
-			frac->c_real = frac->x_imag + frac->x * (frac->x_real - frac->x_imag)/FRAC_WW;
-			frac->c_imag = frac->y_imag + frac->y * (frac->y_real - frac->y_imag)/FRAC_WH;
+			frac->c_re = frac->x_im + frac->x * (frac->x_re - frac->x_im)/FRAC_WW;
+			frac->c_im = frac->y_im + frac->y * (frac->y_re - frac->y_im)/FRAC_WH;
 			n = to_draw_mandelbrot(frac);
 			if(n == frac->max_iterations)
 				my_mlx_pixel_put(frac,  0x00000000);
@@ -54,6 +53,5 @@ int mandelbrot(t_fractol *frac)
 		frac->x++;
 		frac->y = 0;
 	}
-
-	return(0);
+	return (0);
 }

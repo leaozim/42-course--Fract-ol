@@ -10,45 +10,48 @@
 // /*                                                                            */
 // /* ************************************************************************** */
 
-// #include "../fractol.h"
+#include "../fractol.h"
 
-// void	to_draw_julia(t_fractol *frac)
-// {
-// 	double temp;
-// 	int n;
-// 	double aux;
+int	to_draw_julia(t_fractol *frac)
+{
+	int		n;
+	double temp;
+	double	va_z;
 	
-// 	aux = 0;
-// 	n = 0;
-// 	frac->z_real = frac->c_real;
-// 	frac->z_imag = frac->c_imag;
-// 	while(n < MAX_ITERATIONS && aux < 4)
-// 	{
-// 		temp = pow(frac->z_real, 2) - pow(frac->z_imag, 2) + frac->c_const_real;
-// 		frac->z_imag  = (2 * frac->z_real * frac->z_imag) + frac->c_const_img;
-// 		frac->z_real = temp;
-// 		aux = pow(frac->z_real, 2) + pow(frac->z_imag, 2);
-// 		n++;
-// 	}
-// 	if(n == MAX_ITERATIONS)
-// 		my_mlx_pixel_put(frac,  0x4B0082);
-// 	else
-// 		my_mlx_pixel_put(frac,  set_color(n));
-// }
+	n = 0;
+	va_z = 0;
+	frac->z_re = frac->c_re;
+	frac->z_im = frac->c_im;
+	while(n < frac->max_iterations && va_z < 4)
+	{
+		temp = pow(frac->z_re, 2) - pow(frac->z_im, 2) + frac->k_re;
+		frac->z_im  = (2 * frac->z_re * frac->z_im) + frac->k_im;
+		frac->z_re = temp;
+		va_z = pow(frac->z_re, 2) + pow(frac->z_im, 2);
+		n++;
+	}
+	return (n);
+}
 
-// int julia(t_fractol *frac)
-// {
-// 	while (frac->x < WIN_WIDTH)
-// 	{
-// 		while(frac->y < WIN_HEIGHT)
-// 		{
-// 			frac->c_real = frac->x_imag + frac->x * (frac->x_real - frac->x_imag)/WIN_WIDTH;
-// 			frac->c_imag = frac->y_imag + frac->y * (frac->y_real - frac->y_imag)/WIN_HEIGHT;
-// 			to_draw_julia(frac);
-// 			frac->y++;
-// 		}
-// 		frac->x++;
-// 		frac->y = 0;
-// 	}
-// 	return(0);
-// }
+int julia(t_fractol *frac)
+{
+	double	n;
+
+	while (frac->x < FRAC_WW)
+	{
+		while(frac->y < FRAC_WH)
+		{
+			frac->c_re = frac->x_im + frac->x * (frac->x_re - frac->x_im)/FRAC_WW;
+			frac->c_im = frac->y_im + frac->y * (frac->y_re - frac->y_im)/FRAC_WH;
+			n = to_draw_julia(frac);
+			if(n == frac->max_iterations)
+				my_mlx_pixel_put(frac,  0x4B0082);
+			else
+				my_mlx_pixel_put(frac,  set_color(n));
+			frac->y++;
+		}
+		frac->x++;
+		frac->y = 0;
+	}
+	return(0);
+}
