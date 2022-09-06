@@ -8,12 +8,13 @@ PRINTF =		$(PRINTF_PATH)libftprintf.a
 LIBFT =			$(LIBFT_PATH)libft.a
 
 # INPUTS
-SRC		=	main.c \
+SRC		=	fractal.c \
 			init_structs.c \
-			events.c \
+			events_mlx.c \
 			mandelbrot.c \
 			color.c \
-			julia.c 
+			julia.c \
+			draw_fractol.c 
 		
 
 HSRC	=	fractol.h 
@@ -22,7 +23,6 @@ OBJS	=	$(addprefix srcs/, ${SRC:.c=.o})
 # compilation
 CC		=	gcc
 CFLAGS	=	-O3 -g3 
-IFT		=	-Ilibft -Llibft
 IMLX	=	-Imlx -Lmlx -lmlx -lXext -lX11 -lm
 
 # clean
@@ -42,7 +42,7 @@ $(LIBFT):
 			
 $(NAME):	$(OBJS) $(HSRC) $(LIBFT) $(PRINTF)
 			ar -rcs $(NAME) $(OBJS)
-			$(CC) $(CFLAGS) $(addprefix srcs/, $(SRC)) $(NAME) $(PRINTF) $(LIBFT) $(IFT) $(IMLX) -o fractol
+			$(CC) $(CFLAGS) $(addprefix srcs/, $(SRC)) $(NAME) $(PRINTF) $(LIBFT) $(IMLX) -o fractol
 
 clean:
 			${RM} ${OBJS}

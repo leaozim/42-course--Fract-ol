@@ -44,6 +44,7 @@ SRCS_B	=	ft_lstadd_back.c \
 			ft_lstsize.c \
 			get_next_line_mult_fds.c \
 			get_next_line.c \
+			ft_atof.c \
 
 OBJS	=	$(SRCS:.c=.o) \
 
