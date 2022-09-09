@@ -6,11 +6,13 @@
 /*   By: lade-lim <lade-lim@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 15:57:34 by lade-lim          #+#    #+#             */
-/*   Updated: 2022/09/06 20:20:47 by lade-lim         ###   ########.fr       */
+/*   Updated: 2022/09/09 18:55:49 by lade-lim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fractol.h"
+
+# define CLR 0xFFFFF
 
 void	init_window(t_fractol *f)
 {
@@ -18,8 +20,8 @@ void	init_window(t_fractol *f)
 	f->w_data.win = mlx_new_window(f->w_data.mlx, WIDTH, HEIGHT, "Fract-ol!");
 	init_image(f);
 	mlx_mouse_hook(f->w_data.win, &mouse_event, f);
-	mlx_hook(f->w_data.win, KeyPress, KeyPressMask, &close_esc, f);
-	mlx_hook(f->w_data.win, DestroyNotify, NoEventMask, &close_game, f);
+	mlx_hook(f->w_data.win, KEY_PRESS, KEY_PRESS_MASK, &keyboard_events, f);
+	mlx_hook(f->w_data.win, DESTROY_NOTIFY, NO_EVENT_MASK, &close_win, f);
 	mlx_loop(f->w_data.mlx);
 }
 
@@ -30,16 +32,18 @@ void	init_image(t_fractol *f)
 	&f->w_data.line_length, &f->w_data.endian);
 	draw_fractol(f);
 	mlx_put_image_to_window(f->w_data.mlx, f->w_data.win, f->w_data.img, 0, 0);
+	menu(f);
 }
 
-void	new_image_draw(t_fractol *f)
+void	redraw_image(t_fractol *f)
 {
 	mlx_clear_window(f->w_data.mlx, f->w_data.win);
 	draw_fractol(f);
 	mlx_put_image_to_window(f->w_data.mlx, f->w_data.win, f->w_data.img, 0, 0);
+	menu(f);
 }
 
-int	close_game(t_fractol *f)
+int	close_win(t_fractol *f)
 {
 	if (f->w_data.win != NULL)
 	{
@@ -52,16 +56,13 @@ int	close_game(t_fractol *f)
 	exit (0);
 }
 
-int	close_esc(int keycode, t_fractol *f)
+void	menu(t_fractol *v)
 {
-	if (keycode == XK_Escape)
-	{
-		mlx_destroy_image(f->w_data.mlx, f->w_data.img);
-		mlx_destroy_window(f->w_data.mlx, f->w_data.win);
-		mlx_destroy_display(f->w_data.mlx);
-		free(f->w_data.mlx);
-		exit(0);
-		free(f);
-	}
-	return (0);
+	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 45, CLR, "Controls");
+	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 63, CLR, "Move: ARROWS");
+	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 78, CLR, "Exit: ESC");
+	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 93, CLR, "Zoom: SCROLL");
+	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 550, CLR, "Fract's");
+	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 570, CLR, "1: Julia");
+	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 585, CLR, "2: Mandelbrot");
 }

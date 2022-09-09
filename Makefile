@@ -14,8 +14,8 @@ SRC		=	fractal.c \
 			mandelbrot.c \
 			color.c \
 			julia.c \
-			draw_fractol.c 
-		
+			draw_fractol.c \
+			move.c
 
 HSRC	=	fractol.h 
 OBJS	=	$(addprefix srcs/, ${SRC:.c=.o})

@@ -6,7 +6,7 @@
 /*   By: lade-lim <lade-lim@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/05 19:50:17 by lade-lim          #+#    #+#             */
-/*   Updated: 2022/09/06 20:28:39 by lade-lim         ###   ########.fr       */
+/*   Updated: 2022/09/08 22:58:44 by lade-lim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ int	draw_fractol(t_fractol *frac)
 			if (frac->set == JULIA)
 				n = julia(frac);
 			set_color_frac(frac, n);
-	
 			frac->y++;
 		}
 		frac->x++;

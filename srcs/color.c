@@ -6,7 +6,7 @@
 /*   By: lade-lim <lade-lim@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 21:29:38 by lade-lim          #+#    #+#             */
-/*   Updated: 2022/09/06 20:22:55 by lade-lim         ###   ########.fr       */
+/*   Updated: 2022/09/08 22:59:53 by lade-lim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,17 @@ void	my_mlx_pixel_put(t_fractol *frac, int n)
 
 int	set_color(t_fractol *frac, int n)
 {
-	int	r;
-	int	g;
-	int	b;
-	double t;
+	int		r;
+	int		g;
+	int		b;
+	double	t;
 
 	t = (double)n / 100;
 	if (frac->set == JULIA)
 	{
-		r = sin(0.08 * n + 10 + 10) * 128 + 127;
-		g = sin(0.08 * n + 1 + 52) * 128 + 127;
-		b = sin(0.08 * n + 10 + 0) * 128 + 127;
+		r = sin(0.08 * n + 20) * 125 + 126;
+		g = sin(0.08 * n + 53) * 125 + 126;
+		b = sin(0.08 * n + 10) * 125 + 126;
 	}
 	if (frac->set ==  MANDELBROT)
 	{
@@ -41,9 +41,6 @@ int	set_color(t_fractol *frac, int n)
 		g = (int)(15 * pow(1 - t, 2) * pow(t, 2) * 50);
 		b = (int)(8.5 * pow(1 - t, 3) * t * 100);
 	}
-	// r = 250 * t * 1;
-	// g = 100* t;
-	// b =	256 * t * 10;
 	return (r << 16 | g << 8 | b);
 }
 
