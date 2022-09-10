@@ -11,11 +11,10 @@ LIBFT =			$(LIBFT_PATH)libft.a
 SRC		=	fractal.c \
 			init_structs.c \
 			events_mlx.c \
-			mandelbrot.c \
 			color.c \
-			julia.c \
 			draw_fractol.c \
-			move.c
+			move.c \
+			fractol_math.c
 
 HSRC	=	fractol.h 
 OBJS	=	$(addprefix srcs/, ${SRC:.c=.o})

@@ -6,7 +6,7 @@
 /*   By: lade-lim <lade-lim@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 18:53:40 by lade-lim          #+#    #+#             */
-/*   Updated: 2022/09/09 18:56:49 by lade-lim         ###   ########.fr       */
+/*   Updated: 2022/09/10 20:19:08 by lade-lim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,9 @@
 # include <math.h>
 # include "./my_libs/ft_libft/libft.h"	
 # include "./my_libs/ft_printf/ft_printf.h"
-# include "keysym.h"
+# include "defines.h"
 
-
-#include <stdio.h>
-
-# define MANDELBROT 1
-# define JULIA 2
-
-# define WIDTH 600
-# define HEIGHT 600
-
-#define ERRO0 "Invalid number of parameters."
-#define ERRO1 "Usage: ./fractol (Julia / Mandelbrot)"
-#define ERRO2 "Is not a valid fractal name."
+# include <stdio.h>
 
 typedef struct s_mlx
 {
@@ -49,6 +38,11 @@ typedef struct s_fractol
 	int		x;
 	int		y;
 	int		set;
+	int		n;
+	int		color1;
+	int		color2;
+	int		color3;
+	double	color_ju;
 	double	xmax;
 	double	xmin;
 	double	ymax;
@@ -59,8 +53,10 @@ typedef struct s_fractol
 	double	cmin;
 	double	kmax;
 	double	kmin;
-	double	cent_min;
-	double	cent_max;
+	double	sqr_zmax;
+	double	sqr_zmin;
+	double	cent_x;
+	double	cent_y;
 	int		max_iterations;
 	t_mlx	w_data;
 }	t_fractol;
@@ -84,5 +80,8 @@ static void	init_julia(t_fractol *frac, int argc, char **argv);
 int			mouse_event(int keysys, int x, int y, t_fractol *win);
 void		fractol_move(int key, t_fractol *frac);
 void		menu(t_fractol *v);
+int			celtic(t_fractol *frac);
+void		set_new_frac(int key, t_fractol *f);
+void		change_color(t_fractol *data);
 
 #endif

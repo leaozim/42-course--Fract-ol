@@ -6,13 +6,11 @@
 /*   By: lade-lim <lade-lim@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 15:57:34 by lade-lim          #+#    #+#             */
-/*   Updated: 2022/09/09 18:55:49 by lade-lim         ###   ########.fr       */
+/*   Updated: 2022/09/10 20:22:08 by lade-lim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fractol.h"
-
-# define CLR 0xFFFFF
 
 void	init_window(t_fractol *f)
 {
@@ -59,10 +57,15 @@ int	close_win(t_fractol *f)
 void	menu(t_fractol *v)
 {
 	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 45, CLR, "Controls");
+	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 54, CLR, "-------------");
 	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 63, CLR, "Move: ARROWS");
 	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 78, CLR, "Exit: ESC");
 	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 93, CLR, "Zoom: SCROLL");
-	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 550, CLR, "Fract's");
-	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 570, CLR, "1: Julia");
-	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 585, CLR, "2: Mandelbrot");
+	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 103, CLR, "-------------");
+	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 537, CLR, "Fract's");
+	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 546, CLR, "-------------");
+	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 555, CLR, "1: Mandelbrot");
+	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 570, CLR, "2: Julia");
+	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 585, CLR, "3: Celtic");
+	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 595, CLR, "-------------");
 }
