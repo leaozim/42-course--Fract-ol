@@ -1,38 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atof.c                                          :+:      :+:    :+:   */
+/*   ft_isnum.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lade-lim <lade-lim@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/05 17:36:24 by lade-lim          #+#    #+#             */
-/*   Updated: 2022/09/11 18:58:04 by lade-lim         ###   ########.fr       */
+/*   Created: 2022/09/11 18:18:46 by lade-lim          #+#    #+#             */
+/*   Updated: 2022/09/11 22:31:34 by lade-lim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-double	ft_atof(char *str)
+int	ft_isnum(char *nbr)
 {
-	int		sign;
-	double	result;
-	double	decimal;
+	int	len;
 
-	sign = 1;
-	result = 0;
-	decimal = 0.1;
-	if (*str == '-' || *str == '+')
-	{
-		if (*str == '-')
-			sign *= -1;
-		str++;
-	}
-	while (ft_isdigit(*str++))
-		result *= 10 + (*str - '0');
-	while (ft_isdigit(*str))
-	{
-		result += (*str++ - '0') * decimal;
-		decimal /= 10;
-	}
-	return (result * sign);
+	len = ft_strlen(nbr);
+	if (nbr[len - 1] == '.')
+		return (0);
+	if (*nbr == '+' || *nbr == '-')
+		nbr++;
+	if (*nbr == '.')
+		return (0);
+	while (ft_isdigit(*nbr))
+		nbr++;
+	if (!(*nbr))
+		return (1);
+	nbr++;
+	while (ft_isdigit(*nbr))
+		nbr++;
+	if (*nbr)
+		return (0);
+	return (1);
 }

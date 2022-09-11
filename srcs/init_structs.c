@@ -6,7 +6,7 @@
 /*   By: lade-lim <lade-lim@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 15:18:58 by lade-lim          #+#    #+#             */
-/*   Updated: 2022/09/10 20:19:30 by lade-lim         ###   ########.fr       */
+/*   Updated: 2022/09/11 18:58:25 by lade-lim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,7 @@ void	init_structs(t_fractol *data, int argc, char **argv)
 	data->ymax = data->ymin + (data->xmax - data->xmin) * WIDTH / HEIGHT;
 	data->zmax = 0;
 	data->zmin = 0;
-	data->kmax = 0.355;
-	data->kmin = 0.355;
 	data->max_iterations = 100;
-	if (data->set == JULIA && argc > 2)
+	if (data->set == JULIA)
 		init_julia(data, argc, argv);
 }

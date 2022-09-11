@@ -6,7 +6,7 @@
 /*   By: lade-lim <lade-lim@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 18:53:40 by lade-lim          #+#    #+#             */
-/*   Updated: 2022/09/10 20:19:08 by lade-lim         ###   ########.fr       */
+/*   Updated: 2022/09/11 17:26:33 by lade-lim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ typedef struct s_fractol
 	int		color1;
 	int		color2;
 	int		color3;
+	int		max_iterations;
+	char	*title;
 	double	color_ju;
 	double	xmax;
 	double	xmin;
@@ -57,7 +59,6 @@ typedef struct s_fractol
 	double	sqr_zmin;
 	double	cent_x;
 	double	cent_y;
-	int		max_iterations;
 	t_mlx	w_data;
 }	t_fractol;
 
@@ -68,7 +69,7 @@ void		init_image(t_fractol *frac);
 void		redraw_image(t_fractol *f);
 int			close_win(t_fractol *f);
 int			keyboard_events(int key, t_fractol *f);
-void		set_color_frac(t_fractol *frac, int n);
+void		set_frac_color(t_fractol *frac, int n);
 int			set_color(t_fractol *frac, int n);
 void		my_mlx_pixel_put(t_fractol *frac, int n);
 int			draw_fractol(t_fractol *frac);
@@ -83,5 +84,6 @@ void		menu(t_fractol *v);
 int			celtic(t_fractol *frac);
 void		set_new_frac(int key, t_fractol *f);
 void		change_color(t_fractol *data);
+void		reset_frac(t_fractol *data);
 
 #endif

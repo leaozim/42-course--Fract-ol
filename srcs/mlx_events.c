@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   events_mlx.c                                       :+:      :+:    :+:   */
+/*   mlx_events.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lade-lim <lade-lim@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 15:57:34 by lade-lim          #+#    #+#             */
-/*   Updated: 2022/09/10 20:22:08 by lade-lim         ###   ########.fr       */
+/*   Updated: 2022/09/11 21:28:08 by lade-lim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,11 @@ void	menu(t_fractol *v)
 	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 45, CLR, "Controls");
 	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 54, CLR, "-------------");
 	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 63, CLR, "Move: ARROWS");
-	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 78, CLR, "Exit: ESC");
+	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 78, CLR, "Color: C");
 	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 93, CLR, "Zoom: SCROLL");
-	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 103, CLR, "-------------");
+	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 108, CLR, "Reset: R");
+	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 123, CLR, "Exit: ESC");
+	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 133, CLR, "-------------");
 	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 537, CLR, "Fract's");
 	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 546, CLR, "-------------");
 	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 555, CLR, "1: Mandelbrot");

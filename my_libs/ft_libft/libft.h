@@ -6,7 +6,7 @@
 /*   By: lade-lim <lade-lim@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 17:19:41 by lade-lim          #+#    #+#             */
-/*   Updated: 2022/09/05 17:40:26 by lade-lim         ###   ########.fr       */
+/*   Updated: 2022/09/11 19:24:53 by lade-lim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,5 +81,6 @@ int		ft_lstsize(t_list *lst);
 char	*get_next_line(int fd);
 char	*get_next_line_mult_fds(int fd);
 double	ft_atof(char *str);
+int		ft_isnum(char *nbr);
 
 #endif 

@@ -6,7 +6,7 @@
 /*   By: lade-lim <lade-lim@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 21:29:38 by lade-lim          #+#    #+#             */
-/*   Updated: 2022/09/10 20:20:37 by lade-lim         ###   ########.fr       */
+/*   Updated: 2022/09/11 16:57:25 by lade-lim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	set_color(t_fractol *frac, int n)
 	return (r << 16 | g << 8 | b);
 }
 
-void	set_color_frac(t_fractol *frac, int n)
+void	set_frac_color(t_fractol *frac, int n)
 {
 	if (frac->set == JULIA)
 	{
@@ -60,13 +60,4 @@ void	set_color_frac(t_fractol *frac, int n)
 		else
 			my_mlx_pixel_put(frac, set_color(frac, n));
 	}
-}
-
-void	change_color(t_fractol *frac)
-{
-	frac->color_ju = 0.03;
-	frac->color1 = 256;
-	frac->color2 = 50;
-	frac->color3 = 255;
-	redraw_image(frac);
 }

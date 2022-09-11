@@ -8,13 +8,14 @@ PRINTF =		$(PRINTF_PATH)libftprintf.a
 LIBFT =			$(LIBFT_PATH)libft.a
 
 # INPUTS
-SRC		=	fractal.c \
+SRC		=	fractol.c \
 			init_structs.c \
-			events_mlx.c \
+			mlx_events.c \
 			color.c \
 			draw_fractol.c \
-			move.c \
-			fractol_math.c
+			key_events.c \
+			fractol_math.c \
+			mouse.c
 
 HSRC	=	fractol.h 
 OBJS	=	$(addprefix srcs/, ${SRC:.c=.o})
