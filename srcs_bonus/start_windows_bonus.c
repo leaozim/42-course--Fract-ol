@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   start_windows.c                                    :+:      :+:    :+:   */
+/*   start_windows_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lade-lim <lade-lim@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 15:57:34 by lade-lim          #+#    #+#             */
-/*   Updated: 2022/09/12 21:38:18 by lade-lim         ###   ########.fr       */
+/*   Updated: 2022/09/12 20:01:02 by lade-lim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fractol.h"
+#include "../includes/fractol_bonus.h"
 
 void	init_window(t_fractol *f)
 {
@@ -40,13 +40,15 @@ void	menu(t_fractol *v)
 	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 45, CLR, "Controls");
 	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 54, CLR, "-------------");
 	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 63, CLR, "Move: ARROWS");
-	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 78, CLR, "Zoom: SCROLL");
-	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 93, CLR, "Reset: R");
-	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 108, CLR, "Exit: ESC");
-	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 118, CLR, "-------------");
+	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 78, CLR, "Color: C");
+	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 93, CLR, "Zoom: SCROLL");
+	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 108, CLR, "Reset: R");
+	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 123, CLR, "Exit: ESC");
+	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 133, CLR, "-------------");
 	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 537, CLR, "Fract's");
 	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 546, CLR, "-------------");
 	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 555, CLR, "1: Mandelbrot");
 	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 570, CLR, "2: Julia");
-	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 580, CLR, "-------------");
+	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 585, CLR, "3: Celtic");
+	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 595, CLR, "-------------");
 }

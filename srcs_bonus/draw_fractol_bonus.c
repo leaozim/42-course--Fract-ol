@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   draw_fractol.c                                     :+:      :+:    :+:   */
+/*   draw_fractol_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lade-lim <lade-lim@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/05 19:50:17 by lade-lim          #+#    #+#             */
-/*   Updated: 2022/09/12 20:16:21 by lade-lim         ###   ########.fr       */
+/*   Updated: 2022/09/12 20:00:16 by lade-lim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fractol.h"
+#include "../includes/fractol_bonus.h"
 
 int	draw_fractol(t_fractol *frac)
 {
@@ -30,6 +30,8 @@ int	draw_fractol(t_fractol *frac)
 				n = mandelbrot(frac);
 			if (frac->set == JULIA)
 				n = julia(frac);
+			if (frac->set == CELTIC)
+				n = celtic(frac);
 			set_frac_color(frac, n);
 			frac->y++;
 		}

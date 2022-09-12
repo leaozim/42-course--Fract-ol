@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol.h                                          :+:      :+:    :+:   */
+/*   fractol_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lade-lim <lade-lim@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 18:53:40 by lade-lim          #+#    #+#             */
-/*   Updated: 2022/09/12 20:20:31 by lade-lim         ###   ########.fr       */
+/*   Updated: 2022/09/12 20:50:46 by lade-lim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRACTOL_H
-# define FRACTOL_H
+#ifndef FRACTOL_BONUSH
+# define FRACTOL_BONUSH
 
 # include <mlx.h>
 # include <math.h>
-# include "defines.h" 
+# include "defines_bonus.h" 
 # include "../my_libs/ft_libft/libft.h"	
 # include "../my_libs/ft_printf/ft_printf.h"
 
@@ -52,6 +52,8 @@ typedef struct s_fractol
 	double	cmin;
 	double	kmax;
 	double	kmin;
+	double	sqr_zmax;
+	double	sqr_zmin;
 	double	cent_x;
 	double	cent_y;
 	t_mlx	w_data;

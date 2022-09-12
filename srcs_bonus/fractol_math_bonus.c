@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol_math.c                                     :+:      :+:    :+:   */
+/*   fractol_math_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lade-lim <lade-lim@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 00:07:37 by lade-lim          #+#    #+#             */
-/*   Updated: 2022/09/12 20:16:28 by lade-lim         ###   ########.fr       */
+/*   Updated: 2022/09/12 20:00:31 by lade-lim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fractol.h"
+#include "../includes/fractol_bonus.h"
 
 int	mandelbrot(t_fractol *frac)
 {
@@ -49,6 +49,29 @@ int	julia(t_fractol *frac)
 		frac->zmin = (2 * frac->zmax * frac->zmin) + frac->kmin;
 		frac->zmax = temp;
 		va_z = pow(frac->zmax, 2) + pow(frac->zmin, 2);
+		n++;
+	}
+	return (n);
+}
+
+int	celtic(t_fractol *frac)
+{
+	int		n;
+	double	va_z;
+	double	sqr_zmax;
+	double	sqr_zmin;
+
+	n = 0;
+	frac->zmax = 0;
+	frac->zmin = 0;
+	frac->sqr_zmax = frac->zmax * frac->zmax;
+	frac->sqr_zmin = frac->zmin * frac->zmin;
+	while (n < frac->max_iterations && frac->sqr_zmax + frac->sqr_zmin < 4)
+	{
+		frac->zmin = (2 * frac->zmax * frac->zmin) + frac->cmin;
+		frac->zmax = fabs(frac->sqr_zmax - frac->sqr_zmin) + frac->cmax;
+		frac->sqr_zmax = pow(frac->zmax, 2);
+		frac->sqr_zmin = pow(frac->zmin, 2);
 		n++;
 	}
 	return (n);
