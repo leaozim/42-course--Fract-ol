@@ -6,11 +6,11 @@
 /*   By: lade-lim <lade-lim@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 00:07:37 by lade-lim          #+#    #+#             */
-/*   Updated: 2022/09/10 20:15:38 by lade-lim         ###   ########.fr       */
+/*   Updated: 2022/09/12 02:37:41 by lade-lim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../fractol.h"
+#include "../includes/fractol.h"
 
 int	mandelbrot(t_fractol *frac)
 {

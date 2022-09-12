@@ -6,11 +6,11 @@
 /*   By: lade-lim <lade-lim@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 21:29:38 by lade-lim          #+#    #+#             */
-/*   Updated: 2022/09/11 16:57:25 by lade-lim         ###   ########.fr       */
+/*   Updated: 2022/09/12 02:37:30 by lade-lim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../fractol.h"
+#include "../includes/fractol.h"
 
 void	my_mlx_pixel_put(t_fractol *frac, int n)
 {

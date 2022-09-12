@@ -6,11 +6,11 @@
 /*   By: lade-lim <lade-lim@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 16:47:45 by lade-lim          #+#    #+#             */
-/*   Updated: 2022/09/11 16:50:23 by lade-lim         ###   ########.fr       */
+/*   Updated: 2022/09/12 02:38:03 by lade-lim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../fractol.h"
+#include "../includes/fractol.h"
 
 int	mouse_event(int keysys, int x, int y, t_fractol *frac)
 {

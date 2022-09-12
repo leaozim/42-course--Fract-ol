@@ -6,11 +6,11 @@
 /*   By: lade-lim <lade-lim@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 15:57:34 by lade-lim          #+#    #+#             */
-/*   Updated: 2022/09/11 21:28:08 by lade-lim         ###   ########.fr       */
+/*   Updated: 2022/09/12 02:52:58 by lade-lim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../fractol.h"
+#include "../includes/fractol.h"
 
 void	init_window(t_fractol *f)
 {
@@ -31,27 +31,6 @@ void	init_image(t_fractol *f)
 	draw_fractol(f);
 	mlx_put_image_to_window(f->w_data.mlx, f->w_data.win, f->w_data.img, 0, 0);
 	menu(f);
-}
-
-void	redraw_image(t_fractol *f)
-{
-	mlx_clear_window(f->w_data.mlx, f->w_data.win);
-	draw_fractol(f);
-	mlx_put_image_to_window(f->w_data.mlx, f->w_data.win, f->w_data.img, 0, 0);
-	menu(f);
-}
-
-int	close_win(t_fractol *f)
-{
-	if (f->w_data.win != NULL)
-	{
-		mlx_destroy_image(f->w_data.mlx, f->w_data.img);
-		mlx_destroy_window(f->w_data.mlx, f->w_data.win);
-		mlx_destroy_display(f->w_data.mlx);
-		free(f->w_data.mlx);
-		free(f);
-	}
-	exit (0);
 }
 
 void	menu(t_fractol *v)

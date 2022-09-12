@@ -6,11 +6,11 @@
 /*   By: lade-lim <lade-lim@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/05 19:50:17 by lade-lim          #+#    #+#             */
-/*   Updated: 2022/09/11 16:57:16 by lade-lim         ###   ########.fr       */
+/*   Updated: 2022/09/12 02:53:08 by lade-lim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../fractol.h"
+#include "../includes/fractol.h"
 
 int	draw_fractol(t_fractol *frac)
 {
@@ -39,4 +39,12 @@ int	draw_fractol(t_fractol *frac)
 		frac->y = 0;
 	}
 	return (0);
+}
+
+void	redraw_image(t_fractol *f)
+{
+	mlx_clear_window(f->w_data.mlx, f->w_data.win);
+	draw_fractol(f);
+	mlx_put_image_to_window(f->w_data.mlx, f->w_data.win, f->w_data.img, 0, 0);
+	menu(f);
 }
