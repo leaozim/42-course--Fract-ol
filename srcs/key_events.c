@@ -6,7 +6,7 @@
 /*   By: lade-lim <lade-lim@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 19:32:20 by lade-lim          #+#    #+#             */
-/*   Updated: 2022/09/12 02:37:54 by lade-lim         ###   ########.fr       */
+/*   Updated: 2022/09/12 17:55:07 by lade-lim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	keyboard_events(int key, t_fractol *f)
 {
 	if (key == ESC)
-		close_win(f);
+		close_window(f);
 	else if (key == LEFT || key == RIGHT || key == UP || key == DOWN)
 		fractol_move(key, f);
 	else if (key == ONE || key == TWO || key == THREE)

@@ -11,12 +11,13 @@ LIBFT =			$(LIBFT_PATH)libft.a
 SRC		=	fractol.c \
 			init_structs.c \
 			start_windows.c \
+			check_errors.c \
 			draw_fractol.c \
 			fractol_math.c \
 			key_events.c \
-			color.c \
-			mouse.c \
-			close.c 
+			define_color.c \
+			mouse_event.c \
+			close_window.c 
 
 HSRC	=	./includes/fractol.h 
 OBJS	=	$(addprefix srcs/, ${SRC:.c=.o})

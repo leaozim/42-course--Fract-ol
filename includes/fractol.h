@@ -6,7 +6,7 @@
 /*   By: lade-lim <lade-lim@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 18:53:40 by lade-lim          #+#    #+#             */
-/*   Updated: 2022/09/12 02:56:53 by lade-lim         ###   ########.fr       */
+/*   Updated: 2022/09/12 19:09:53 by lade-lim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,11 +61,12 @@ typedef struct s_fractol
 
 int			main(int argc, char **argv);
 int			define_fractol(t_fractol *frac, int argc, char **argv);
-int			check_error(t_fractol *frac, int argc, char **argv);
+int			check_args(t_fractol *frac, int argc, char **argv);
 void		init_structs(t_fractol *data, int argc, char **argv);
 void		init_julia(t_fractol *frac, int argc, char **argv);
 void		init_window(t_fractol *f);
 void		init_image(t_fractol *frac);
+void		check_mlx(t_fractol *f, t_fractol *window_data);
 void		menu(t_fractol *v);
 int			draw_fractol(t_fractol *frac);
 void		set_frac_color(t_fractol *frac, int n);
@@ -82,6 +83,6 @@ void		fractol_move(int key, t_fractol *frac);
 void		set_new_frac(int key, t_fractol *f);
 void		change_color(t_fractol *data);
 void		reset_frac(t_fractol *data);
-int			close_win(t_fractol *f);
+int			close_window(t_fractol *f);
 
 #endif

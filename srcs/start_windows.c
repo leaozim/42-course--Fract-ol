@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mlx_events.c                                       :+:      :+:    :+:   */
+/*   start_windows.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lade-lim <lade-lim@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 15:57:34 by lade-lim          #+#    #+#             */
-/*   Updated: 2022/09/12 02:52:58 by lade-lim         ###   ########.fr       */
+/*   Updated: 2022/09/12 19:09:33 by lade-lim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,13 @@
 void	init_window(t_fractol *f)
 {
 	f->w_data.mlx = mlx_init();
+	check_mlx(f, f->w_data.mlx);
 	f->w_data.win = mlx_new_window(f->w_data.mlx, WIDTH, HEIGHT, "Fract-ol!");
+	check_mlx(f, f->w_data.win);
 	init_image(f);
 	mlx_mouse_hook(f->w_data.win, &mouse_event, f);
 	mlx_hook(f->w_data.win, KEY_PRESS, KEY_PRESS_MASK, &keyboard_events, f);
-	mlx_hook(f->w_data.win, DESTROY_NOTIFY, NO_EVENT_MASK, &close_win, f);
+	mlx_hook(f->w_data.win, DESTROY_NOTIFY, NO_EVENT_MASK, &close_window, f);
 	mlx_loop(f->w_data.mlx);
 }
 

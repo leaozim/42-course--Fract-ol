@@ -6,7 +6,7 @@
 /*   By: lade-lim <lade-lim@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 19:32:27 by lade-lim          #+#    #+#             */
-/*   Updated: 2022/09/11 22:58:14 by lade-lim         ###   ########.fr       */
+/*   Updated: 2022/09/12 18:24:16 by lade-lim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,15 @@
 # define WIDTH 600
 # define HEIGHT 600
 
-# define ERR0 "-----------------------------------"
-# define ERR1 "\nInvalid passed parameters.\nDo like this: \n"
-# define ERR2 "\t./fractol Mandelbrot\n\
+# define MSG0 "-----------------------------------"
+# define MSG1 "\nInvalid passed parameters.\nDo like this: \n"
+# define MSG2 "\t./fractol Mandelbrot\n\
 \t./fractol Julia [X.XXX][X.XXX]\n\t./fractol Celtic\n"
-# define ERR3 "./Julia [X.XXX][X.XXX]\nEx:\n\t0.37\t 0.1 \
+# define MSG3 "./Julia [X.XXX][X.XXX]\nEx:\n\t0.37\t 0.1 \
 \n\t0.355\t 0.355\n\t-0.4\t-0.9\n\t0,355534 0,337292\n"
-# define ERR4 "This is not a valid parameter.\n"
+# define MSG4 "This is not a valid parameter.\n"
+
+# define ERROR 1
+# define SUCES 0
 
 #endif
