@@ -6,7 +6,7 @@
 /*   By: lade-lim <lade-lim@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 18:53:40 by lade-lim          #+#    #+#             */
-/*   Updated: 2022/09/12 20:20:31 by lade-lim         ###   ########.fr       */
+/*   Updated: 2022/09/13 21:08:26 by lade-lim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,8 @@ typedef struct s_fractol
 int			main(int argc, char **argv);
 int			define_fractol(t_fractol *frac, int argc, char **argv);
 int			check_args(t_fractol *frac, int argc, char **argv);
-void		init_structs(t_fractol *data, int argc, char **argv);
-void		init_julia(t_fractol *frac, int argc, char **argv);
+void		init_structs(t_fractol *data, char **argv);
+void		init_julia(t_fractol *frac, char **argv);
 void		init_window(t_fractol *f);
 void		init_image(t_fractol *frac);
 void		check_mlx(t_fractol *f, t_fractol *window_data);
@@ -75,7 +75,6 @@ int			mandelbrot(t_fractol *frac);
 int			julia(t_fractol *frac);
 int			celtic(t_fractol *frac);
 int			keyboard_events(int key, t_fractol *f);
-int			check_fractol(t_fractol *frac, int argc, char **argv);
 int			mouse_event(int keysys, int x, int y, t_fractol *win);
 void		fractol_move(int key, t_fractol *frac);
 void		set_new_frac(int key, t_fractol *f);

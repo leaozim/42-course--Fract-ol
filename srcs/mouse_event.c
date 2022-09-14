@@ -6,7 +6,7 @@
 /*   By: lade-lim <lade-lim@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 16:47:45 by lade-lim          #+#    #+#             */
-/*   Updated: 2022/09/12 21:43:11 by lade-lim         ###   ########.fr       */
+/*   Updated: 2022/09/12 22:07:18 by lade-lim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	mouse_event(int keysys, int x, int y, t_fractol *frac)
 {
-	if (keysys == MOUSE_UP)
+	if (keysys == MOUSE_UP && x)
 	{
 		frac->xmin += frac->cent_x / 10;
 		frac->xmax -= frac->cent_x / 10;
@@ -22,7 +22,7 @@ int	mouse_event(int keysys, int x, int y, t_fractol *frac)
 		frac->ymax -= frac->cent_y / 10;
 		frac->max_iterations += 1;
 	}
-	if (keysys == MOUSE_DOWN)
+	if (keysys == MOUSE_DOWN && y)
 	{
 		frac->xmin -= frac->cent_x / 10;
 		frac->xmax += frac->cent_x / 10;

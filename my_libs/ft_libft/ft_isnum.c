@@ -6,7 +6,7 @@
 /*   By: lade-lim <lade-lim@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 18:18:46 by lade-lim          #+#    #+#             */
-/*   Updated: 2022/09/11 22:31:34 by lade-lim         ###   ########.fr       */
+/*   Updated: 2022/09/13 01:13:51 by lade-lim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,12 @@ int	ft_isnum(char *nbr)
 	len = ft_strlen(nbr);
 	if (nbr[len - 1] == '.')
 		return (0);
+	while (*nbr)
+	{
+		if (ft_isalpha(*nbr))
+			return (0);
+		nbr++;
+	}
 	if (*nbr == '+' || *nbr == '-')
 		nbr++;
 	if (*nbr == '.')

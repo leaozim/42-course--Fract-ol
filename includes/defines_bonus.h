@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   defines.h                                          :+:      :+:    :+:   */
+/*   defines_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lade-lim <lade-lim@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 19:32:27 by lade-lim          #+#    #+#             */
-/*   Updated: 2022/09/12 18:24:16 by lade-lim         ###   ########.fr       */
+/*   Updated: 2022/09/13 00:43:19 by lade-lim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DEFINES_H
-# define DEFINES_H
+#ifndef DEFINES_BONUS_H
+# define DEFINES_BONUS_H
 
 # define ONE 65436
 # define TWO 65433
@@ -28,7 +28,6 @@
 # define DESTROY_NOTIFY 17
 # define NO_EVENT_MASK	0L
 # define KEY_PRESS 02
-# define KEY_PRESS_MASK 1L<<0
 
 # define CLR 0xFFFFF
 

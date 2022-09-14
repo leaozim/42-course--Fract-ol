@@ -6,7 +6,7 @@
 /*   By: lade-lim <lade-lim@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 19:32:27 by lade-lim          #+#    #+#             */
-/*   Updated: 2022/09/12 21:18:34 by lade-lim         ###   ########.fr       */
+/*   Updated: 2022/09/13 00:52:16 by lade-lim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 # define DESTROY_NOTIFY 17
 # define NO_EVENT_MASK	0L
 # define KEY_PRESS 02
-# define KEY_PRESS_MASK 1L<<0
 
 # define CLR 0xFFFFF
 

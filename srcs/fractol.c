@@ -6,7 +6,7 @@
 /*   By: lade-lim <lade-lim@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 17:32:12 by lade-lim          #+#    #+#             */
-/*   Updated: 2022/09/12 20:16:35 by lade-lim         ###   ########.fr       */
+/*   Updated: 2022/09/14 19:32:08 by lade-lim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,9 @@ int	main(int argc, char **argv)
 	define_fractol(frac, argc, argv);
 	if (!(check_args(frac, argc, argv)))
 	{
-		init_structs(frac, argc, argv);
+		init_structs(frac, argv);
 		init_window(frac);
 	}
+	free (frac);
 	return (0);
 }

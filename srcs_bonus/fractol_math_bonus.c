@@ -6,7 +6,7 @@
 /*   By: lade-lim <lade-lim@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 00:07:37 by lade-lim          #+#    #+#             */
-/*   Updated: 2022/09/12 20:00:31 by lade-lim         ###   ########.fr       */
+/*   Updated: 2022/09/12 22:13:25 by lade-lim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,6 @@ int	julia(t_fractol *frac)
 int	celtic(t_fractol *frac)
 {
 	int		n;
-	double	va_z;
-	double	sqr_zmax;
-	double	sqr_zmin;
 
 	n = 0;
 	frac->zmax = 0;

@@ -6,19 +6,19 @@
 /*   By: lade-lim <lade-lim@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 15:18:58 by lade-lim          #+#    #+#             */
-/*   Updated: 2022/09/12 20:00:40 by lade-lim         ###   ########.fr       */
+/*   Updated: 2022/09/12 22:12:20 by lade-lim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol_bonus.h"
 
-void	init_julia(t_fractol *data, int argc, char **argv)
+void	init_julia(t_fractol *data, char **argv)
 {
 	data->kmax = ft_atof(argv[2]);
 	data->kmin = ft_atof(argv[3]);
 }
 
-void	init_structs(t_fractol *data, int argc, char **argv)
+void	init_structs(t_fractol *data, char **argv)
 {
 	data->y = 0;
 	data->x = 0;
@@ -38,5 +38,5 @@ void	init_structs(t_fractol *data, int argc, char **argv)
 	data->kmin = 0.355;
 	data->max_iterations = 100;
 	if (data->set == JULIA)
-		init_julia(data, argc, argv);
+		init_julia(data, argv);
 }
