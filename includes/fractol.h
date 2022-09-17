@@ -6,7 +6,7 @@
 /*   By: lade-lim <lade-lim@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 18:53:40 by lade-lim          #+#    #+#             */
-/*   Updated: 2022/09/13 21:08:26 by lade-lim         ###   ########.fr       */
+/*   Updated: 2022/09/17 19:16:27 by lade-lim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ typedef struct s_fractol
 	double	cmin;
 	double	kmax;
 	double	kmin;
+	double	sqr_zmax;
+	double	sqr_zmin;
 	double	cent_x;
 	double	cent_y;
 	t_mlx	w_data;

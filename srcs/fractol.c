@@ -6,7 +6,7 @@
 /*   By: lade-lim <lade-lim@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 17:32:12 by lade-lim          #+#    #+#             */
-/*   Updated: 2022/09/14 19:32:08 by lade-lim         ###   ########.fr       */
+/*   Updated: 2022/09/16 03:11:52 by lade-lim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int	define_fractol(t_fractol *frac, int argc, char **argv)
 	else if (argc == 4 && !ft_strncmp("Julia", argv[1], 5) \
 	&& ft_isnum(argv[2]) && ft_isnum(argv[3]))
 		return (frac->set = JULIA);
+	else if (argc == 2 && !ft_strncmp("Celtic", argv[1], 10))
+		return (frac->set = CELTIC);
 	return (0);
 }
 

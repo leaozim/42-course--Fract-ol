@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   close_window_bonus.c                               :+:      :+:    :+:   */
+/*   print_unsigned_int.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lade-lim <lade-lim@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/12 02:42:20 by lade-lim          #+#    #+#             */
-/*   Updated: 2022/09/12 20:00:05 by lade-lim         ###   ########.fr       */
+/*   Created: 2022/07/11 21:50:51 by lade-lim          #+#    #+#             */
+/*   Updated: 2022/07/22 21:07:54 by lade-lim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fractol_bonus.h"
+#include "../ft_printf.h"
 
-int	close_window(t_fractol *f)
+int	print_unsigned_int(int number, t_flags *flags, char spcif, t_str s)
 {
-	if (f->w_data.win != NULL)
+	if (number == '\0')
 	{
-		mlx_destroy_image(f->w_data.mlx, f->w_data.img);
-		mlx_destroy_window(f->w_data.mlx, f->w_data.win);
-		mlx_destroy_display(f->w_data.mlx);
-		free(f->w_data.mlx);
-		free(f);
+		write(1, "0", 1);
+		return (1);
 	}
-	exit (SUCES);
+	s.temp = ft_uitoa(number);
+	s.str = ft_strdup(s.temp);
+	free(s.temp);
+	put_flags(&s, flags, spcif);
+	free(s.str);
+	return (s.len);
 }

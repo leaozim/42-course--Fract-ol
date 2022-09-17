@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   close_window.c                                     :+:      :+:    :+:   */
+/*   print_void_hex.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lade-lim <lade-lim@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/12 02:42:20 by lade-lim          #+#    #+#             */
-/*   Updated: 2022/09/16 03:11:27 by lade-lim         ###   ########.fr       */
+/*   Created: 2022/07/14 21:34:10 by lade-lim          #+#    #+#             */
+/*   Updated: 2022/07/22 20:11:34 by lade-lim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fractol.h"
+#include "../ft_printf.h"			
 
-int	close_window(t_fractol *f)
+int	print_void_hex(void *point, t_flags *flags, char spcif, t_str s)
 {
-	if (f->w_data.win != NULL)
-	{
-		mlx_destroy_image(f->w_data.mlx, f->w_data.img);
-		mlx_destroy_window(f->w_data.mlx, f->w_data.win);
-		mlx_destroy_display(f->w_data.mlx);
-		free(f->w_data.mlx);
-		free(f);
-	}
-	exit (SUCES);
+	size_t	number;
+
+	if (point == NULL)
+		return (ft_putstr_len("(nil)"));
+	number = (size_t)point;
+	s.temp = ft_uipoint_hex(number);
+	s.str = ft_strjoin("0x", s.temp);
+	free(s.temp);
+	put_flags(&s, flags, spcif);
+	free(s.str);
+	return (s.len);
 }

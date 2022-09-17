@@ -6,7 +6,7 @@
 /*   By: lade-lim <lade-lim@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/05 19:50:17 by lade-lim          #+#    #+#             */
-/*   Updated: 2022/09/12 23:01:39 by lade-lim         ###   ########.fr       */
+/*   Updated: 2022/09/16 03:11:37 by lade-lim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ int	draw_fractol(t_fractol *frac)
 				n = mandelbrot(frac);
 			if (frac->set == JULIA)
 				n = julia(frac);
+			if (frac->set == CELTIC)
+				n = celtic(frac);
 			set_frac_color(frac, n);
 			frac->y++;
 		}

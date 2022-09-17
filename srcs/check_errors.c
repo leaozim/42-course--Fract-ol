@@ -6,7 +6,7 @@
 /*   By: lade-lim <lade-lim@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 18:10:08 by lade-lim          #+#    #+#             */
-/*   Updated: 2022/09/12 20:15:54 by lade-lim         ###   ########.fr       */
+/*   Updated: 2022/09/16 03:11:18 by lade-lim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	check_args(t_fractol *frac, int argc, char **argv)
 		return (ft_printf("%s%s%s", MSG0, MSG1, MSG2), ERROR);
 	if (argc == 2 && !ft_strncmp("Julia", argv[1], 5))
 		return (ft_printf("%s%s%s", MSG0, MSG1, MSG3), ERROR);
-	if (frac->set != JULIA && frac->set != MANDELBROT)
+	if (frac->set != JULIA && frac->set != MANDELBROT && frac->set != CELTIC)
 		return (ft_printf("%s", MSG4), ERROR);
 	return (SUCES);
 }

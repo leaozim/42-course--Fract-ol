@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   start_windows_bonus.c                              :+:      :+:    :+:   */
+/*   start_window.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lade-lim <lade-lim@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 15:57:34 by lade-lim          #+#    #+#             */
-/*   Updated: 2022/09/13 01:13:39 by lade-lim         ###   ########.fr       */
+/*   Updated: 2022/09/16 03:12:06 by lade-lim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fractol_bonus.h"
+#include "../includes/fractol.h"
 
 void	init_window(t_fractol *f)
 {
