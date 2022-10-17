@@ -6,14 +6,14 @@
 /*   By: lade-lim <lade-lim@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 18:53:40 by lade-lim          #+#    #+#             */
-/*   Updated: 2022/09/17 19:16:27 by lade-lim         ###   ########.fr       */
+/*   Updated: 2022/10/17 13:05:15 by lade-lim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
-# include <mlx.h>
+# include "mlx.h"
 # include <math.h>
 # include "defines.h" 
 # include "../my_libs/ft_libft/libft.h"	

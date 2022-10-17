@@ -4,9 +4,11 @@ BONUS 			=	fractol_bonus
 
 PRINTF_PATH		=	./my_libs/ft_printf/
 LIBFT_PATH 		=	./my_libs/ft_libft/
+MINILIBX_PATH	=	./minilibx-linux/
 
 PRINTF 			=	$(PRINTF_PATH)libftprintf.a
 LIBFT 			=	$(LIBFT_PATH)libft.a
+MINILIBX		= 	$(MINILIBX_PATH)libmlx_Linux.a
 
 SRC_FILES 		=	fractol.c \
 				init_structs.c \
@@ -35,30 +37,34 @@ RM				=	rm -rf
 
 all:	$(NAME)
 
-$(NAME):	$(LIBFT) $(PRINTF) $(OBJ)
-	$(CC) $(OBJ) $(PRINTF) $(LIBFT) $(CFLAGS) $(MLXFLAGS) -o $@ 
+$(NAME):	$(LIBFT) $(PRINTF) $(MINILIBX)  $(OBJ)
+	$(CC) $(OBJ) $(PRINTF) $(LIBFT) $(MINILIBX) $(CFLAGS) $(MLXFLAGS) -o $@ 
 
 $(OBJ_PATH)/%.o:	$(SRC_PATH)/%.c
 	@mkdir -p $(OBJ_PATH)
-	$(CC)  -c  $(CFLAGS)  $< -o $@
+	@$(CC)  -c  $(CFLAGS)  $< -o $@
 
 
 $(PRINTF):
-			make -C $(PRINTF_PATH)
+	@make -C $(PRINTF_PATH)
 
 $(LIBFT):
-			make -C $(LIBFT_PATH)
-			make bonus -C $(LIBFT_PATH)
+	@make -C $(LIBFT_PATH)
+	@make bonus -C $(LIBFT_PATH)
+
+$(MINILIBX):
+	@make -C $(MINILIBX_PATH)
 
 clean:
-			${RM} ${OBJ_PATH}
-			cd $(PRINTF_PATH) && make clean 
-			cd $(LIBFT_PATH) && make clean 
+	@${RM} ${OBJ_PATH}
+	@cd $(PRINTF_PATH) && make clean 
+	@cd $(LIBFT_PATH) && make clean 
+	@cd $(MINILIBX_PATH) && make clean
 
 fclean:		clean
-			${RM} ${NAME}
-			${RM} ${PRINTF}
-			${RM} ${LIBFT}
+	@${RM} ${NAME}
+	@${RM} ${PRINTF}
+	@${RM} ${LIBFT}
 
 re:			fclean all
 
