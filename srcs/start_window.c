@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   start_window.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lade-lim <lade-lim@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: lade-lim <larissa_silva@outlook.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 15:57:34 by lade-lim          #+#    #+#             */
-/*   Updated: 2022/09/16 03:12:06 by lade-lim         ###   ########.fr       */
+/*   Updated: 2023/05/03 15:48:39 by lade-lim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,10 @@ void	menu(t_fractol *v)
 	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 108, CLR, "Reset: R");
 	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 123, CLR, "Exit: ESC");
 	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 133, CLR, "-------------");
-	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 537, CLR, "Fract's");
-	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 546, CLR, "-------------");
-	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 555, CLR, "1: Mandelbrot");
-	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 570, CLR, "2: Julia");
-	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 585, CLR, "3: Celtic");
-	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 595, CLR, "-------------");
+	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 737, CLR, "Fract's");
+	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 746, CLR, "-------------");
+	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 755, CLR, "1: Mandelbrot");
+	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 770, CLR, "2: Julia");
+	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 785, CLR, "3: Celtic");
+	mlx_string_put(v->w_data.mlx, v->w_data.win, 37, 795, CLR, "-------------");
 }

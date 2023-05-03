@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   defines_bonus.h                                    :+:      :+:    :+:   */
+/*   defines.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lade-lim <lade-lim@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: lade-lim <larissa_silva@outlook.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 19:32:27 by lade-lim          #+#    #+#             */
-/*   Updated: 2022/09/16 03:10:37 by lade-lim         ###   ########.fr       */
+/*   Updated: 2023/05/03 15:42:47 by lade-lim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@
 # define JULIA 2
 # define CELTIC 3
 
-# define WIDTH 650
-# define HEIGHT 650
+# define WIDTH 800
+# define HEIGHT 800
 
 # define MSG0 "-----------------------------------"
 # define MSG1 "\nInvalid passed parameters.\nDo like this: \n"

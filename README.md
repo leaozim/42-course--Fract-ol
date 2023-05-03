@@ -28,7 +28,7 @@ This was the time to create a basic computer graphics project. To fulfill this o
 
 <h3 align=center> Create different Julia sets by passing different parameters to the program: </h3>
 <p align=center>
-<img align="center"  src="https://github.com/leaozim/42-course--Fract-ol/blob/main/images/JULIA2.png"</>
+<img align="center"  src="https://github.com/leaozim/42-course--Fract-ol/blob/main/images/julia_bonitao.png"</>
 </p>
 
 ## How to Run 
