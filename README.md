@@ -31,11 +31,15 @@ This was the time to create a basic computer graphics project. To fulfill this o
 <img align="center"  src="https://github.com/leaozim/42-course--Fract-ol/blob/main/images/JULIA2.png"</>
 </p>
 
-## usage
+## How to Run 
 
 Git clone the project:
 ```sh
 https://github.com/leaozim/42-course--Fract-ol.git
+```
+Installing dependencies
+```sh
+sudo apt-get update && sudo apt-get install xorg libxext-dev zlib1g-dev
 ```
 To compile, use make
 ```sh
