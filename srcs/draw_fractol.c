@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw_fractol.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lade-lim <lade-lim@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: lade-lim <larissa_silva@outlook.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/05 19:50:17 by lade-lim          #+#    #+#             */
-/*   Updated: 2022/09/16 03:11:37 by lade-lim         ###   ########.fr       */
+/*   Updated: 2023/05/03 15:39:20 by lade-lim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	draw_fractol(t_fractol *frac)
 
 	frac->x = 0;
 	frac->y = 0;
+	n = 0;
 	while (frac->x < WIDTH)
 	{
 		while (frac->y < HEIGHT)
